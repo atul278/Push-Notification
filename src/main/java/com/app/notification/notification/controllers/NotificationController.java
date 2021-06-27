@@ -25,9 +25,8 @@ public class NotificationController {
     }
 
     @PostMapping("")
-    public Notification createNotification(@RequestBody Map<String,Object> notification){
-        ObjectMapper mapper = new ObjectMapper();
-        return notificationService.createNotification(mapper.convertValue(notification,Notification.class));
+    public Notification createNotification(@RequestBody Notification notification){
+        return notificationService.createNotification(notification);
     }
 
     @GetMapping()
