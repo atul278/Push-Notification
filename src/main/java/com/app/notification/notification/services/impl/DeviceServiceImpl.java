@@ -31,7 +31,6 @@ public class DeviceServiceImpl implements DeviceService {
     }
 
 
-
     @Override
     public List<Device> createDevice(List<Device> devices, int userId) {
 
@@ -54,14 +53,14 @@ public class DeviceServiceImpl implements DeviceService {
         List<Device> deviceListResponse = new ArrayList<>();
         List<UserDevice> userDeviceList = findUserDevicesByUserId(userId);
         userDeviceList.forEach(userDevice -> {
-            deviceListResponse.addAll(this.devicesList.stream().filter(device -> device.getId()==userDevice.getDeviceId()).collect(Collectors.toList()));
+            this.devicesList.stream().filter(device -> device.getId()==userDevice.getDeviceId()).forEach(device -> deviceListResponse.add(device));
         });
 
         return deviceListResponse;
     }
 
     private List<UserDevice> findUserDevicesByUserId(int userId){
-        return userDevices.stream().filter(userDevice -> userDevice.getDeviceId()==userId).collect(Collectors.toList());
+        return userDevices.stream().filter(userDevice -> userDevice.getUserId()==userId).collect(Collectors.toList());
     }
 
 

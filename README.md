@@ -5,11 +5,11 @@ Send push notification to a single device Send push notification to a user with 
 
 ## Instructions 
 
-2.  Start this Application
+1.  Start this Application
     -  `mvn clean install`
     -  `mvn spring-boot:run`
     
-3.  Create Users
+2.  Create Users
     -   endpoint : `localhost:8080/users`
     -   Request Type : POST
     -   Body :      
@@ -51,7 +51,7 @@ Send push notification to a single device Send push notification to a user with 
         
           ```
 
-4. Fetch list of all Users;
+3. Fetch list of all Users;
     -   endpoint : `localhost:8080/users`
     -   Request Type : GET
     -   Response :
@@ -71,7 +71,7 @@ Send push notification to a single device Send push notification to a user with 
                 }
             ]
          ```                
-5.  Send Notification to a user
+4.  Send Notification to a user
     -   endpoint : `localhost:8080/notification/notify-user`
     -   Request Type : POST
     -   Body :      
@@ -92,11 +92,6 @@ Send push notification to a single device Send push notification to a user with 
                 ]
          ```                
 
-
-
-
-
-
-6. Corner Cases;
+5. Corner Cases;
      - If a push notification is sent to both High/Low groups and some users are in both groups, those users should get only one  because before sending each notification, it will be checked in `NotificaitonHisotry`.
         
