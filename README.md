@@ -56,22 +56,86 @@ Send push notification to a single device Send push notification to a user with 
     -   Request Type : GET
     -   Response :
          ```
+        [
+            {
+                "id": 1,
+                "name": "Atul",
+                "email": "abc@gmail.com",
+                "devices": [
+                    {
+                        "id": 1,
+                        "name": "OnePLus5T"
+                    }
+                ],
+                "group": false
+            },
+            {
+                "id": 2,
+                "name": "Atul Dewanagan",
+                "email": "atulDewanagan@gmail.com",
+                "devices": [
+                    {
+                        "id": 2,
+                        "name": "OnePLus7T"
+                    },
+                    {
+                        "id": 3,
+                        "name": "IPhone 13s"
+                    }
+                ],
+                "group": false
+            }
+        ]
+        
+         ```              
+4.  Create Notification
+    -   endpoint : `localhost:8080/notification`
+    -   Request Type : POST
+    -   Body :      
+           ```
+                {
+                    "type": "email",
+                    "priority": 1,
+                    "data": "Notification Mesaage New Latest"
+                }
+        ```
+    -   Response :
+     
+           ```
+            {
+                "id": 2,
+                "type": "email",
+                "priority": 1,
+                "data": "Notification Mesaage New Latest"
+            }
+        
+          ```
+
+5. Fetch list of all Notification;
+
+    -   endpoint : `localhost:8080/notification`
+    -   Request Type : GET
+    -   Response :
+     
+           ```
             [
                 {
                     "id": 1,
-                    "name": "Atul",
-                    "email": "abc@gmail.com",
-                    "group": false
+                    "type": "email",
+                    "priority": 1,
+                    "data": "Notification Mesaage "
                 },
                 {
                     "id": 2,
-                    "name": "Atul Dewangan",
-                    "email": "abc11@gmail.com",
-                    "group": false
+                    "type": "email",
+                    "priority": 1,
+                    "data": "Notification Mesaage New Latest"
                 }
             ]
-         ```                
-4.  Send Notification to a user
+        
+          ```
+  
+6.  Send Notification to a user
     -   endpoint : `localhost:8080/notification/notify-user`
     -   Request Type : POST
     -   Body :      
