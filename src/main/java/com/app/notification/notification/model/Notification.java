@@ -9,4 +9,5 @@ public class Notification {
     String type;
     int priority;
     String data;
+
 }

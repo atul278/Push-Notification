@@ -9,21 +9,41 @@
     -   Request Type : POST
     -   Body :      
            ```
-                {
-                    "name": "Atul Dewangan",
-                    "email": "abc11@gmail.com",
+            {
+                    "name": "Atul Dewanagan",
+                    "email": "atulDewanagan@gmail.com",
+                    "devices": [
+                                {
+                                    "name": "OnePLus6T"
+                                },
+                                {
+                                    "name": "IPhone 12s"
+                                }
+            
+                    ],
                     "group": false
-                }        
+            }
         ```
     -   Response :
      
            ```
+            {
+                "id": 3,
+                "name": "Atul Dewanagan",
+                "email": "atulDewanagan@gmail.com",
+                "devices": [
                     {
-                            "id": 2,
-                            "name": "Atul Dewangan",
-                            "email": "abc11@gmail.com",
-                            "group": false
+                        "id": 3,
+                        "name": "OnePLus6T"
+                    },
+                    {
+                        "id": 4,
+                        "name": "IPhone 12s"
                     }
+                ],
+                "group": false
+            }
+        
           ```
 
 4. Fetch list of all Users;
