@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
+/**
+ *
+ * Controller to add CRUD opertions and push notification
+ *
+ * */
 @RestController
 @RequestMapping("/notification")
 public class NotificationController {

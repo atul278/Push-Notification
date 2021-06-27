@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ *
+ * Controller to add CRUD operations for users service
+ *
+ * */
 @RestController
 @RequestMapping("/users")
 public class UserController {

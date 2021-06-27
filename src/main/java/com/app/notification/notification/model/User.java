@@ -2,9 +2,11 @@ package com.app.notification.notification.model;
 
 import lombok.Data;
 
-import java.beans.Transient;
 import java.util.List;
-
+/**
+ * Entity for user, if isGroup is true that the user is a group mail
+ *
+ * */
 @Data
 public class User {
     int id;
